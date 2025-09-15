@@ -126,7 +126,7 @@ sz ::=
 
 ### Compiler
 
-A compiler (really a transpiler) is used to convert the ASCII virtualized code into a binary format.
+A compiler is used to convert the ASCII virtualized code into a binary format.
 
 It will perform sanity checks on missing or duplicate labels or global constants. Validation of opcodes and operaters will also be performed.
 
