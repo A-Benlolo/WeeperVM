@@ -2,7 +2,7 @@
 
 <p align="center"> <img src="https://github.com/A-Benlolo/WeeperVM/blob/main/img/prompt.png?raw=true"/> </p>
 
-A capture the flag (CTF) obfuscated with a custom, highly capable virtual machine. Originally shared on [CrackMyApp](https://crackmy.app/crackmes/weepervm-level-2-6068) and [crackmes.one](https://crackmes.one/crackme/6807f6ab8f555589f3530e64), it remains unsolved after nearly five months. Hopefully access to the source code serves as a sufficient hint for future reverse engineers.
+A capture the flag (CTF) obfuscated with a custom, highly capable virtual machine. Originally shared on [CrackMyApp](https://crackmy.app/crackmes/weepervm-level-2-6068) and [crackmes.one](https://crackmes.one/crackme/6807f6ab8f555589f3530e64). After nearly 5 months of standing unsolved, the key was finally cracked by [darbozno](https://x64.ooo/posts/2025-09-14-reverse-engineering-vm-weeper2/).
 
 There are several components developed for this CTF, but I did not initially intend to share the source code. So, lack of "best practice" is to be expected, but it works out in the end.
 
@@ -31,7 +31,7 @@ There is 1 MB of virtual memory with the following memory reservations.
 | 0x010000 | 0x01FFFF | Stack variables* |
 | 0x020000 | 0x02FFFF | Reserved for future use |
 
-\* The virtual architecture does not have a stack in the traditional sense, but the a memory reservation is left to complicate the reverse engineering process.
+\* The virtual architecture does not have a stack in the traditional sense, but the memory reservation is left to complicate the reverse engineering process.
 
 Instead, a unique key is calculated per local variable, which would usually go on the stack. This key is used as an offset into the local variable memory space. In other words, a dictionary is used in place of a stack. So, instead of **PUSH** and **POP** you have **PUT** and **GET**.
 
@@ -52,9 +52,9 @@ The following categories make developing virtual code easier to organize. Note t
 
 ## Virtualized Code
 
-The virtual code provided in this repository is almost entirely uncommented, since the comments gave away too much in terms of solving. Even so, variable and label names are intact and help quite a bit.
+Commented and uncommented code are available.
 
-The commented code will be added after a writeup for a valid solution is submitted.
+The commented code contains the solution to the challenge as well as a high-level solution process.
 
 ### Formal Syntax
 
